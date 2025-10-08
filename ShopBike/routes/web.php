@@ -21,7 +21,7 @@ Route::get('/client', [UserController::class, 'index'])->name('user.index.index'
 Route::get('/client/bicycles', [UserController::class, 'bicycles'])->name('user.bicycles.bicycles');
 Route::get('/client/parts', [UserController::class, 'parts'])->name('user.parts.parts');
 Route::get('/client/accessories', [UserController::class, 'accessories'])->name('user.accessories.accessories');
-Route::get('/client/cart', [UserController::class, 'cart'])->name('user.cart.cart');
+Route::get('/client/cart', [UserController::class, 'cart'])->name('user.cart.cart')->middleware('check.login');
 Route::get('/client/single', [UserController::class, 'single'])->name('user.single.single');
 
 // Trang 404 (tùy bạn có muốn route không)
